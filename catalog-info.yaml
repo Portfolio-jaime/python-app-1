@@ -1,7 +1,7 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: python-app
+  name: python-app-1
   description: Python app that displays time.
   annotations:
     github.com/project-slug: Portfolio-jaime/python-app-1
