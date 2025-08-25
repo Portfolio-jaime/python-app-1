@@ -60,7 +60,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#documents-for-python-app" class="md-skip">
+        <a href="#python-flask-application-version-1" class="md-skip">
           Skip to content
         </a>
       
@@ -183,6 +183,18 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="." class="md-nav__link md-nav__link--active">
         
   
@@ -193,6 +205,406 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#descripcion" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 Descripción
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      📋 API Endpoints
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📋 API Endpoints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-apiv1info" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /api/v1/info
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-apiv1healthz" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /api/v1/healthz
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acceso-a-la-aplicacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚀 Acceso a la Aplicación
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🚀 Acceso a la Aplicación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#urls-de-entornos" class="md-nav__link">
+    <span class="md-ellipsis">
+      URLs de Entornos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplos-de-uso" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejemplos de Uso
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuracion-con-helm" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚙️ Configuración con Helm
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⚙️ Configuración con Helm">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#estructura-de-charts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estructura de Charts
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#values-por-entorno" class="md-nav__link">
+    <span class="md-ellipsis">
+      Values por Entorno
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Values por Entorno">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#development" class="md-nav__link">
+    <span class="md-ellipsis">
+      Development
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#production" class="md-nav__link">
+    <span class="md-ellipsis">
+      Production
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#despliegue-con-helm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Despliegue con Helm
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gitops-con-argocd" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔄 GitOps con ArgoCD
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔄 GitOps con ArgoCD">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuracion-de-aplicacion-argocd" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuración de Aplicación ArgoCD
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multi-environment-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multi-Environment Setup
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#monitoreo-y-observabilidad" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 Monitoreo y Observabilidad
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📊 Monitoreo y Observabilidad">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#servicemonitor-para-prometheus" class="md-nav__link">
+    <span class="md-ellipsis">
+      ServiceMonitor para Prometheus
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dashboards-de-grafana" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dashboards de Grafana
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alertas-criticas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Alertas Críticas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#desarrollo-local" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔧 Desarrollo Local
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔧 Desarrollo Local">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#requisitos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requisitos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup-rapido" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setup Rápido
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testing-local-con-helm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Testing Local con Helm
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      🐛 Troubleshooting
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🐛 Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problemas-comunes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Problemas Comunes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Problemas Comunes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#helm-release-fails" class="md-nav__link">
+    <span class="md-ellipsis">
+      Helm Release Fails
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#argocd-sync-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      ArgoCD Sync Issues
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application-not-responding" class="md-nav__link">
+    <span class="md-ellipsis">
+      Application Not Responding
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cicd-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚀 CI/CD Pipeline
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🚀 CI/CD Pipeline">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#github-actions-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      GitHub Actions Integration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#automated-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Automated Testing
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metricas-de-rendimiento" class="md-nav__link">
+    <span class="md-ellipsis">
+      📈 Métricas de Rendimiento
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📈 Métricas de Rendimiento">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#slis-service-level-indicators" class="md-nav__link">
+    <span class="md-ellipsis">
+      SLIs (Service Level Indicators)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#capacity-planning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Capacity Planning
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -218,6 +630,395 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#descripcion" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 Descripción
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      📋 API Endpoints
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📋 API Endpoints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-apiv1info" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /api/v1/info
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-apiv1healthz" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /api/v1/healthz
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acceso-a-la-aplicacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚀 Acceso a la Aplicación
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🚀 Acceso a la Aplicación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#urls-de-entornos" class="md-nav__link">
+    <span class="md-ellipsis">
+      URLs de Entornos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplos-de-uso" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejemplos de Uso
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuracion-con-helm" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚙️ Configuración con Helm
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⚙️ Configuración con Helm">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#estructura-de-charts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estructura de Charts
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#values-por-entorno" class="md-nav__link">
+    <span class="md-ellipsis">
+      Values por Entorno
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Values por Entorno">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#development" class="md-nav__link">
+    <span class="md-ellipsis">
+      Development
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#production" class="md-nav__link">
+    <span class="md-ellipsis">
+      Production
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#despliegue-con-helm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Despliegue con Helm
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gitops-con-argocd" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔄 GitOps con ArgoCD
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔄 GitOps con ArgoCD">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuracion-de-aplicacion-argocd" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuración de Aplicación ArgoCD
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multi-environment-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multi-Environment Setup
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#monitoreo-y-observabilidad" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 Monitoreo y Observabilidad
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📊 Monitoreo y Observabilidad">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#servicemonitor-para-prometheus" class="md-nav__link">
+    <span class="md-ellipsis">
+      ServiceMonitor para Prometheus
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dashboards-de-grafana" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dashboards de Grafana
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alertas-criticas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Alertas Críticas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#desarrollo-local" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔧 Desarrollo Local
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔧 Desarrollo Local">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#requisitos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requisitos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup-rapido" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setup Rápido
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testing-local-con-helm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Testing Local con Helm
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      🐛 Troubleshooting
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🐛 Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problemas-comunes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Problemas Comunes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Problemas Comunes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#helm-release-fails" class="md-nav__link">
+    <span class="md-ellipsis">
+      Helm Release Fails
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#argocd-sync-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      ArgoCD Sync Issues
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application-not-responding" class="md-nav__link">
+    <span class="md-ellipsis">
+      Application Not Responding
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cicd-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚀 CI/CD Pipeline
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🚀 CI/CD Pipeline">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#github-actions-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      GitHub Actions Integration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#automated-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Automated Testing
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metricas-de-rendimiento" class="md-nav__link">
+    <span class="md-ellipsis">
+      📈 Métricas de Rendimiento
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📈 Métricas de Rendimiento">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#slis-service-level-indicators" class="md-nav__link">
+    <span class="md-ellipsis">
+      SLIs (Service Level Indicators)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#capacity-planning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Capacity Planning
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -240,13 +1041,486 @@
   
 
 
-<h1 id="documents-for-python-app">Documents for python-app<a class="headerlink" href="#documents-for-python-app" title="Permanent link">&para;</a></h1>
-<p>This application has two endpoints:
-- <code>/api/v1/info</code>
-- <code>/api/v1/healthz</code></p>
-<p>Here you could expand on what each of these endpoints do.</p>
-<h1 id="how-to-access-the-app">How to access the app?<a class="headerlink" href="#how-to-access-the-app" title="Permanent link">&para;</a></h1>
-<p>You can access the app by accessing this URL: <code>python-app.test.com/api/v1/healthz</code> </p>
+<h1 id="python-flask-application-version-1">Python Flask Application (Version 1)<a class="headerlink" href="#python-flask-application-version-1" title="Permanent link">&para;</a></h1>
+<p>Aplicación web Flask con despliegue automatizado usando Helm Charts y ArgoCD.</p>
+<h2 id="descripcion">🎯 Descripción<a class="headerlink" href="#descripcion" title="Permanent link">&para;</a></h2>
+<p>Esta es una versión alternativa de la aplicación Python Flask, configurada con:</p>
+<ul>
+<li><strong>Helm Charts</strong>: Para gestión de configuraciones</li>
+<li><strong>ArgoCD</strong>: Para despliegue GitOps</li>
+<li><strong>Múltiples entornos</strong>: Dev, Staging, Production</li>
+<li><strong>Monitoreo</strong>: Integración con Prometheus y Grafana</li>
+</ul>
+<h2 id="api-endpoints">📋 API Endpoints<a class="headerlink" href="#api-endpoints" title="Permanent link">&para;</a></h2>
+<h3 id="get-apiv1info">GET <code>/api/v1/info</code><a class="headerlink" href="#get-apiv1info" title="Permanent link">&para;</a></h3>
+<p>Endpoint que devuelve información del sistema y timestamp actual.</p>
+<p><strong>Funcionalidad:</strong>
+- Muestra fecha y hora actual
+- Hostname del contenedor/pod
+- Mensaje de confirmación
+- Información de deployment</p>
+<p><strong>Respuesta esperada:</strong>
+<div class="language-json highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;02:30:45PM on August 25, 2025&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;hostname&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;python-app-1-pod-abc123&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;You are doing great, little human! &lt;3&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;deployed_on&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;kubernetes&quot;</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div></p>
+<h3 id="get-apiv1healthz">GET <code>/api/v1/healthz</code><a class="headerlink" href="#get-apiv1healthz" title="Permanent link">&para;</a></h3>
+<p>Health check endpoint para Kubernetes liveness y readiness probes.</p>
+<p><strong>Funcionalidad:</strong>
+- Verifica que la aplicación esté funcionando
+- Usado por Kubernetes para health checks
+- Endpoint crítico para disponibilidad</p>
+<p><strong>Respuesta esperada:</strong>
+<div class="language-json highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;up&quot;</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div></p>
+<h2 id="acceso-a-la-aplicacion">🚀 Acceso a la Aplicación<a class="headerlink" href="#acceso-a-la-aplicacion" title="Permanent link">&para;</a></h2>
+<h3 id="urls-de-entornos">URLs de Entornos<a class="headerlink" href="#urls-de-entornos" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Development</strong>: <code>python-app-1-dev.test.com</code></li>
+<li><strong>Staging</strong>: <code>python-app-1-staging.test.com</code>  </li>
+<li><strong>Production</strong>: <code>python-app-1.test.com</code></li>
+</ul>
+<h3 id="ejemplos-de-uso">Ejemplos de Uso<a class="headerlink" href="#ejemplos-de-uso" title="Permanent link">&para;</a></h3>
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Test del health check</span>
+curl<span class="w"> </span>https://python-app-1.test.com/api/v1/healthz
+
+<span class="c1"># Obtener información del sistema</span>
+curl<span class="w"> </span>https://python-app-1.test.com/api/v1/info
+
+<span class="c1"># Con headers JSON</span>
+curl<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Accept: application/json&quot;</span><span class="w"> </span>https://python-app-1.test.com/api/v1/info<span class="w"> </span><span class="p">|</span><span class="w"> </span>jq
+</code></pre></div></td></tr></table></div>
+<h2 id="configuracion-con-helm">⚙️ Configuración con Helm<a class="headerlink" href="#configuracion-con-helm" title="Permanent link">&para;</a></h2>
+<h3 id="estructura-de-charts">Estructura de Charts<a class="headerlink" href="#estructura-de-charts" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code>charts/
+├── python-app/
+│   ├── Chart.yaml
+│   ├── values.yaml
+│   └── templates/
+│       ├── deployment.yaml
+│       ├── service.yaml
+│       ├── ingress.yaml
+│       └── _helpers.tpl
+└── argocd/
+    └── values-argo.yaml
+</code></pre></div></td></tr></table></div>
+<h3 id="values-por-entorno">Values por Entorno<a class="headerlink" href="#values-por-entorno" title="Permanent link">&para;</a></h3>
+<h4 id="development">Development<a class="headerlink" href="#development" title="Permanent link">&para;</a></h4>
+<div class="language-yaml highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">replicaCount</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="nt">image</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">tag</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;dev&quot;</span>
+<span class="nt">resources</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">requests</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">cpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">100m</span>
+<span class="w">    </span><span class="nt">memory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">128Mi</span>
+<span class="nt">ingress</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python-app-1-dev.test.com</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="production">Production<a class="headerlink" href="#production" title="Permanent link">&para;</a></h4>
+<div class="language-yaml highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">replicaCount</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span>
+<span class="nt">image</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">tag</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;latest&quot;</span>
+<span class="nt">resources</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">requests</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">cpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">200m</span>
+<span class="w">    </span><span class="nt">memory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">256Mi</span>
+<span class="w">  </span><span class="nt">limits</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">cpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">500m</span>
+<span class="w">    </span><span class="nt">memory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">512Mi</span>
+<span class="nt">ingress</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python-app-1.test.com</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="despliegue-con-helm">Despliegue con Helm<a class="headerlink" href="#despliegue-con-helm" title="Permanent link">&para;</a></h3>
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Instalar en desarrollo</span>
+helm<span class="w"> </span>install<span class="w"> </span>python-app-1-dev<span class="w"> </span>./charts/python-app<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-f<span class="w"> </span>charts/python-app/values-dev.yaml<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-n<span class="w"> </span>python-app-1-dev<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--create-namespace
+
+<span class="c1"># Upgrade en producción</span>
+helm<span class="w"> </span>upgrade<span class="w"> </span>python-app-1<span class="w"> </span>./charts/python-app<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-f<span class="w"> </span>charts/python-app/values-prod.yaml<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-n<span class="w"> </span>python-app-1-prod
+</code></pre></div></td></tr></table></div>
+<h2 id="gitops-con-argocd">🔄 GitOps con ArgoCD<a class="headerlink" href="#gitops-con-argocd" title="Permanent link">&para;</a></h2>
+<h3 id="configuracion-de-aplicacion-argocd">Configuración de Aplicación ArgoCD<a class="headerlink" href="#configuracion-de-aplicacion-argocd" title="Permanent link">&para;</a></h3>
+<div class="language-yaml highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">argoproj.io/v1alpha1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Application</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python-app-1</span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">argocd</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">project</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span>
+<span class="w">  </span><span class="nt">source</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">repoURL</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/Portfolio-jaime/python-app-1.git</span>
+<span class="w">    </span><span class="nt">targetRevision</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HEAD</span>
+<span class="w">    </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">charts/python-app</span>
+<span class="w">    </span><span class="nt">helm</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">valueFiles</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">values-prod.yaml</span>
+<span class="w">  </span><span class="nt">destination</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">server</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://kubernetes.default.svc</span>
+<span class="w">    </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python-app-1</span>
+<span class="w">  </span><span class="nt">syncPolicy</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">automated</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">prune</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">      </span><span class="nt">selfHeal</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="multi-environment-setup">Multi-Environment Setup<a class="headerlink" href="#multi-environment-setup" title="Permanent link">&para;</a></h3>
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Crear aplicaciones para todos los entornos</span>
+<span class="nv">environments</span><span class="o">=(</span><span class="s2">&quot;dev&quot;</span><span class="w"> </span><span class="s2">&quot;staging&quot;</span><span class="w"> </span><span class="s2">&quot;prod&quot;</span><span class="o">)</span>
+
+<span class="k">for</span><span class="w"> </span>env<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">environments</span><span class="p">[@]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="w">  </span>argocd<span class="w"> </span>app<span class="w"> </span>create<span class="w"> </span>python-app-1-<span class="nv">$env</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--repo<span class="w"> </span>https://github.com/Portfolio-jaime/python-app-1.git<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--path<span class="w"> </span>charts/python-app<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--helm-set-file<span class="w"> </span>values-<span class="nv">$env</span>.yaml<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--dest-server<span class="w"> </span>https://kubernetes.default.svc<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--dest-namespace<span class="w"> </span>python-app-1-<span class="nv">$env</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--sync-policy<span class="w"> </span>automated
+<span class="k">done</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="monitoreo-y-observabilidad">📊 Monitoreo y Observabilidad<a class="headerlink" href="#monitoreo-y-observabilidad" title="Permanent link">&para;</a></h2>
+<h3 id="servicemonitor-para-prometheus">ServiceMonitor para Prometheus<a class="headerlink" href="#servicemonitor-para-prometheus" title="Permanent link">&para;</a></h3>
+<div class="language-yaml highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">monitoring.coreos.com/v1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ServiceMonitor</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python-app-1</span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python-app-1</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">selector</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">matchLabels</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python-app-1</span>
+<span class="w">  </span><span class="nt">endpoints</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http</span>
+<span class="w">    </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/metrics</span>
+<span class="w">    </span><span class="nt">interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">30s</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="dashboards-de-grafana">Dashboards de Grafana<a class="headerlink" href="#dashboards-de-grafana" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Application Metrics</strong>: Response time, error rate, throughput</li>
+<li><strong>Infrastructure</strong>: CPU, Memory, Network usage</li>
+<li><strong>Business</strong>: Request patterns, user activity</li>
+</ul>
+<h3 id="alertas-criticas">Alertas Críticas<a class="headerlink" href="#alertas-criticas" title="Permanent link">&para;</a></h3>
+<div class="language-yaml highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">groups</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python-app-1.rules</span>
+<span class="w">  </span><span class="nt">rules</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">alert</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PythonApp1Down</span>
+<span class="w">    </span><span class="nt">expr</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">up{job=&quot;python-app-1&quot;} == 0</span>
+<span class="w">    </span><span class="nt">for</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5m</span>
+<span class="w">    </span><span class="nt">labels</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">severity</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">critical</span>
+<span class="w">    </span><span class="nt">annotations</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">summary</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Python</span><span class="nv"> </span><span class="s">App</span><span class="nv"> </span><span class="s">1</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">down&quot;</span>
+
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">alert</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PythonApp1HighErrorRate</span>
+<span class="w">    </span><span class="nt">expr</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rate(flask_http_request_exceptions_total[5m]) &gt; 0.1</span>
+<span class="w">    </span><span class="nt">for</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2m</span>
+<span class="w">    </span><span class="nt">labels</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">severity</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">warning</span>
+<span class="w">    </span><span class="nt">annotations</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">summary</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;High</span><span class="nv"> </span><span class="s">error</span><span class="nv"> </span><span class="s">rate</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">Python</span><span class="nv"> </span><span class="s">App</span><span class="nv"> </span><span class="s">1&quot;</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="desarrollo-local">🔧 Desarrollo Local<a class="headerlink" href="#desarrollo-local" title="Permanent link">&para;</a></h2>
+<h3 id="requisitos">Requisitos<a class="headerlink" href="#requisitos" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Python 3.9+</li>
+<li>Docker</li>
+<li>Helm 3.x</li>
+<li>kubectl</li>
+</ul>
+<h3 id="setup-rapido">Setup Rápido<a class="headerlink" href="#setup-rapido" title="Permanent link">&para;</a></h3>
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Clonar y setup</span>
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/Portfolio-jaime/python-app-1.git
+<span class="nb">cd</span><span class="w"> </span>python-app-1
+
+<span class="c1"># Ejecutar con Docker Compose</span>
+docker-compose<span class="w"> </span>up<span class="w"> </span>-d
+
+<span class="c1"># Verificar funcionamiento</span>
+curl<span class="w"> </span>http://localhost:5000/api/v1/healthz
+</code></pre></div></td></tr></table></div>
+<h3 id="testing-local-con-helm">Testing Local con Helm<a class="headerlink" href="#testing-local-con-helm" title="Permanent link">&para;</a></h3>
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Validar templates</span>
+helm<span class="w"> </span>template<span class="w"> </span>python-app-1<span class="w"> </span>./charts/python-app<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-f<span class="w"> </span>charts/python-app/values-dev.yaml
+
+<span class="c1"># Dry run</span>
+helm<span class="w"> </span>install<span class="w"> </span>python-app-1-test<span class="w"> </span>./charts/python-app<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-f<span class="w"> </span>charts/python-app/values-dev.yaml<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--dry-run<span class="w"> </span>--debug
+
+<span class="c1"># Deploy local</span>
+helm<span class="w"> </span>install<span class="w"> </span>python-app-1-local<span class="w"> </span>./charts/python-app<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-f<span class="w"> </span>charts/python-app/values-dev.yaml
+</code></pre></div></td></tr></table></div>
+<h2 id="troubleshooting">🐛 Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
+<h3 id="problemas-comunes">Problemas Comunes<a class="headerlink" href="#problemas-comunes" title="Permanent link">&para;</a></h3>
+<h4 id="helm-release-fails">Helm Release Fails<a class="headerlink" href="#helm-release-fails" title="Permanent link">&para;</a></h4>
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Verificar status del release</span>
+helm<span class="w"> </span>status<span class="w"> </span>python-app-1
+
+<span class="c1"># Ver historia</span>
+helm<span class="w"> </span><span class="nb">history</span><span class="w"> </span>python-app-1
+
+<span class="c1"># Rollback si es necesario</span>
+helm<span class="w"> </span>rollback<span class="w"> </span>python-app-1<span class="w"> </span><span class="m">1</span>
+</code></pre></div></td></tr></table></div>
+<h4 id="argocd-sync-issues">ArgoCD Sync Issues<a class="headerlink" href="#argocd-sync-issues" title="Permanent link">&para;</a></h4>
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Verificar estado</span>
+argocd<span class="w"> </span>app<span class="w"> </span>get<span class="w"> </span>python-app-1
+
+<span class="c1"># Forzar sync</span>
+argocd<span class="w"> </span>app<span class="w"> </span>sync<span class="w"> </span>python-app-1<span class="w"> </span>--force
+
+<span class="c1"># Ver diff</span>
+argocd<span class="w"> </span>app<span class="w"> </span>diff<span class="w"> </span>python-app-1
+</code></pre></div></td></tr></table></div>
+<h4 id="application-not-responding">Application Not Responding<a class="headerlink" href="#application-not-responding" title="Permanent link">&para;</a></h4>
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Port forward para debug</span>
+kubectl<span class="w"> </span>port-forward<span class="w"> </span>svc/python-app-1<span class="w"> </span><span class="m">5000</span>:80<span class="w"> </span>-n<span class="w"> </span>python-app-1
+
+<span class="c1"># Verificar logs</span>
+kubectl<span class="w"> </span>logs<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>python-app-1<span class="w"> </span>-n<span class="w"> </span>python-app-1<span class="w"> </span>--tail<span class="o">=</span><span class="m">100</span>
+
+<span class="c1"># Verificar health checks</span>
+kubectl<span class="w"> </span>describe<span class="w"> </span>pod<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>python-app-1<span class="w"> </span>-n<span class="w"> </span>python-app-1
+</code></pre></div></td></tr></table></div>
+<h2 id="cicd-pipeline">🚀 CI/CD Pipeline<a class="headerlink" href="#cicd-pipeline" title="Permanent link">&para;</a></h2>
+<h3 id="github-actions-integration">GitHub Actions Integration<a class="headerlink" href="#github-actions-integration" title="Permanent link">&para;</a></h3>
+<div class="language-yaml highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Python App 1 Pipeline</span>
+<span class="nt">on</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">push</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">branches</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">main</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">develop</span><span class="p p-Indicator">]</span>
+
+<span class="nt">jobs</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">build-and-deploy</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
+<span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Build Docker Image</span>
+<span class="w">      </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">docker build -t python-app-1:${{ github.sha }} .</span>
+
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Update Helm Values</span>
+<span class="w">      </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">        </span><span class="no">yq eval &#39;.image.tag = &quot;${{ github.sha }}&quot;&#39; -i charts/python-app/values.yaml</span>
+
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Commit Changes</span>
+<span class="w">      </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">        </span><span class="no">git add charts/python-app/values.yaml</span>
+<span class="w">        </span><span class="no">git commit -m &quot;Update image tag to ${{ github.sha }}&quot;</span>
+<span class="w">        </span><span class="no">git push</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="automated-testing">Automated Testing<a class="headerlink" href="#automated-testing" title="Permanent link">&para;</a></h3>
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Unit tests</span>
+python<span class="w"> </span>-m<span class="w"> </span>pytest<span class="w"> </span>src/tests/
+
+<span class="c1"># Integration tests</span>
+helm<span class="w"> </span><span class="nb">test</span><span class="w"> </span>python-app-1
+
+<span class="c1"># Security scanning</span>
+trivy<span class="w"> </span>image<span class="w"> </span>python-app-1:latest
+</code></pre></div></td></tr></table></div>
+<h2 id="metricas-de-rendimiento">📈 Métricas de Rendimiento<a class="headerlink" href="#metricas-de-rendimiento" title="Permanent link">&para;</a></h2>
+<h3 id="slis-service-level-indicators">SLIs (Service Level Indicators)<a class="headerlink" href="#slis-service-level-indicators" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Availability</strong>: &gt; 99.9%</li>
+<li><strong>Response Time</strong>: &lt; 200ms (P95)</li>
+<li><strong>Error Rate</strong>: &lt; 0.1%</li>
+<li><strong>Throughput</strong>: &gt; 1000 RPS</li>
+</ul>
+<h3 id="capacity-planning">Capacity Planning<a class="headerlink" href="#capacity-planning" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>CPU</strong>: 200m requests, 500m limits</li>
+<li><strong>Memory</strong>: 256Mi requests, 512Mi limits</li>
+<li><strong>Replicas</strong>: Min 2, Max 10 (HPA)</li>
+</ul>
+<hr />
+<p><strong>Aplicación Python Flask v1 - Portfolio DevOps</strong> </p>
 
 
 
