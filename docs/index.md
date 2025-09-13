@@ -1,366 +1,318 @@
-# Python Flask Application (Version 1)
+# Python Flask Application
 
-Aplicación web Flask con despliegue automatizado usando Helm Charts y ArgoCD.
+Aplicación web sencilla desarrollada en Python Flask para demostración de despliegues con Kubernetes y GitOps.
 
 ## 🎯 Descripción
 
-Esta es una versión alternativa de la aplicación Python Flask, configurada con:
+Esta aplicación Flask proporciona una API REST básica con endpoints para información del sistema y health checks, ideal para demostraciones de:
 
-- **Helm Charts**: Para gestión de configuraciones
-- **ArgoCD**: Para despliegue GitOps
-- **Múltiples entornos**: Dev, Staging, Production
-- **Monitoreo**: Integración con Prometheus y Grafana
+- Despliegues en Kubernetes
+- Pipelines CI/CD
+- Monitoreo y observabilidad
+- Patrones de microservicios
 
-## 📋 API Endpoints
+## 📋 Características
+
+- **Framework**: Flask (Python)
+- **Endpoints REST**: JSON API
+- **Health Checks**: Endpoint de salud para Kubernetes
+- **Containerizada**: Docker ready
+- **Cloud Native**: 12-factor app compliant
+
+## 🚀 API Endpoints
 
 ### GET `/api/v1/info`
 
-Endpoint que devuelve información del sistema y timestamp actual.
+Devuelve información del sistema y la aplicación.
 
-**Funcionalidad:**
-- Muestra fecha y hora actual
-- Hostname del contenedor/pod
-- Mensaje de confirmación
-- Información de deployment
-
-**Respuesta esperada:**
+**Response:**
 ```json
 {
     "time": "02:30:45PM on August 25, 2025",
-    "hostname": "python-app-1-pod-abc123",
+    "hostname": "python-app-1-pod-xyz",
     "message": "You are doing great, little human! <3",
     "deployed_on": "kubernetes"
 }
 ```
 
+**Ejemplo:**
+```bash
+curl -X GET http://python-app-1.test.com/api/v1/info
+```
+
 ### GET `/api/v1/healthz`
 
-Health check endpoint para Kubernetes liveness y readiness probes.
+Health check endpoint para Kubernetes probes.
 
-**Funcionalidad:**
-- Verifica que la aplicación esté funcionando
-- Usado por Kubernetes para health checks
-- Endpoint crítico para disponibilidad
-
-**Respuesta esperada:**
+**Response:**
 ```json
 {
     "status": "up"
 }
 ```
 
-## 🚀 Acceso a la Aplicación
+**HTTP Status Codes:**
+- `200 OK`: Aplicación saludable
+- `503 Service Unavailable`: Aplicación no disponible
 
-### URLs de Entornos
-
-- **Development**: `python-app-1-dev.test.com`
-- **Staging**: `python-app-1-staging.test.com`  
-- **Production**: `python-app-1.test.com`
-
-### Ejemplos de Uso
-
+**Ejemplo:**
 ```bash
-# Test del health check
-curl https://python-app-1.test.com/api/v1/healthz
-
-# Obtener información del sistema
-curl https://python-app-1.test.com/api/v1/info
-
-# Con headers JSON
-curl -H "Accept: application/json" https://python-app-1.test.com/api/v1/info | jq
+curl -X GET http://python-app-1.test.com/api/v1/healthz
 ```
 
-## ⚙️ Configuración con Helm
+## 🐳 Containerización
 
-### Estructura de Charts
+### Dockerfile
+La aplicación está containerizada usando una imagen base de Python:
 
-```
-charts/
-├── python-app/
-│   ├── Chart.yaml
-│   ├── values.yaml
-│   └── templates/
-│       ├── deployment.yaml
-│       ├── service.yaml
-│       ├── ingress.yaml
-│       └── _helpers.tpl
-└── argocd/
-    └── values-argo.yaml
-```
+```dockerfile
+FROM python:3.9-slim
 
-### Values por Entorno
+WORKDIR /app
 
-#### Development
-```yaml
-replicaCount: 1
-image:
-  tag: "dev"
-resources:
-  requests:
-    cpu: 100m
-    memory: 128Mi
-ingress:
-  host: python-app-1-dev.test.com
+COPY requirements.txt .
+RUN pip install -r requirements.txt
+
+COPY src/ .
+
+EXPOSE 5000
+
+CMD ["python", "app.py"]
 ```
 
-#### Production
-```yaml
-replicaCount: 3
-image:
-  tag: "latest"
-resources:
-  requests:
-    cpu: 200m
-    memory: 256Mi
-  limits:
-    cpu: 500m
-    memory: 512Mi
-ingress:
-  host: python-app-1.test.com
-```
-
-### Despliegue con Helm
-
+### Build y Run Local
 ```bash
-# Instalar en desarrollo
-helm install python-app-1-dev ./charts/python-app \
-  -f charts/python-app/values-dev.yaml \
-  -n python-app-1-dev \
-  --create-namespace
+# Build de la imagen
+docker build -t python-app-1 .
 
-# Upgrade en producción
-helm upgrade python-app-1 ./charts/python-app \
-  -f charts/python-app/values-prod.yaml \
-  -n python-app-1-prod
+# Ejecutar localmente
+docker run -p 5000:5000 python-app-1
+
+# Verificar que funciona
+curl http://localhost:5000/api/v1/healthz
 ```
 
-## 🔄 GitOps con ArgoCD
+## ☸️ Despliegue en Kubernetes
 
-### Configuración de Aplicación ArgoCD
+### Manifiestos Base
 
-```yaml
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  name: python-app-1
-  namespace: argocd
-spec:
-  project: default
-  source:
-    repoURL: https://github.com/Portfolio-jaime/python-app-1.git
-    targetRevision: HEAD
-    path: charts/python-app
-    helm:
-      valueFiles:
-      - values-prod.yaml
-  destination:
-    server: https://kubernetes.default.svc
-    namespace: python-app-1
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
-```
+La aplicación se despliega usando los siguientes recursos de Kubernetes:
 
-### Multi-Environment Setup
+- **Deployment**: Gestiona los pods de la aplicación
+- **Service**: Expone la aplicación dentro del cluster
+- **Ingress**: (Opcional) Routing externo
 
+### Despliegue Rápido
 ```bash
-# Crear aplicaciones para todos los entornos
-environments=("dev" "staging" "prod")
+# Aplicar manifiestos
+kubectl apply -f k8s/
 
-for env in "${environments[@]}"; do
-  argocd app create python-app-1-$env \
-    --repo https://github.com/Portfolio-jaime/python-app-1.git \
-    --path charts/python-app \
-    --helm-set-file values-$env.yaml \
-    --dest-server https://kubernetes.default.svc \
-    --dest-namespace python-app-1-$env \
-    --sync-policy automated
-done
+# Verificar estado
+kubectl get pods,svc -n default
+
+# Port forward para testing
+kubectl port-forward svc/python-app-1 5000:80
+
+# Test de conectividad
+curl http://localhost:5000/api/v1/healthz
 ```
 
-## 📊 Monitoreo y Observabilidad
+### Health Checks en Kubernetes
 
-### ServiceMonitor para Prometheus
-
-```yaml
-apiVersion: monitoring.coreos.com/v1
-kind: ServiceMonitor
-metadata:
-  name: python-app-1
-  namespace: python-app-1
-spec:
-  selector:
-    matchLabels:
-      app: python-app-1
-  endpoints:
-  - port: http
-    path: /metrics
-    interval: 30s
-```
-
-### Dashboards de Grafana
-
-- **Application Metrics**: Response time, error rate, throughput
-- **Infrastructure**: CPU, Memory, Network usage
-- **Business**: Request patterns, user activity
-
-### Alertas Críticas
+La aplicación está configurada con probes de Kubernetes:
 
 ```yaml
-groups:
-- name: python-app-1.rules
-  rules:
-  - alert: PythonApp1Down
-    expr: up{job="python-app-1"} == 0
-    for: 5m
-    labels:
-      severity: critical
-    annotations:
-      summary: "Python App 1 is down"
+livenessProbe:
+  httpGet:
+    path: /api/v1/healthz
+    port: 5000
+  initialDelaySeconds: 30
+  periodSeconds: 10
 
-  - alert: PythonApp1HighErrorRate
-    expr: rate(flask_http_request_exceptions_total[5m]) > 0.1
-    for: 2m
-    labels:
-      severity: warning
-    annotations:
-      summary: "High error rate in Python App 1"
+readinessProbe:
+  httpGet:
+    path: /api/v1/healthz
+    port: 5000
+  initialDelaySeconds: 5
+  periodSeconds: 5
 ```
 
 ## 🔧 Desarrollo Local
 
 ### Requisitos
 - Python 3.9+
-- Docker
-- Helm 3.x
-- kubectl
+- pip
+- Flask
 
-### Setup Rápido
-
+### Setup del Entorno
 ```bash
-# Clonar y setup
+# Clonar repositorio
 git clone https://github.com/Portfolio-jaime/python-app-1.git
 cd python-app-1
 
-# Ejecutar con Docker Compose
-docker-compose up -d
+# Crear virtual environment
+python -m venv venv
+source venv/bin/activate  # Linux/Mac
+# venv\Scripts\activate    # Windows
 
-# Verificar funcionamiento
-curl http://localhost:5000/api/v1/healthz
+# Instalar dependencias
+pip install -r requirements.txt
+
+# Ejecutar aplicación
+cd src
+python app.py
 ```
 
-### Testing Local con Helm
+La aplicación estará disponible en `http://localhost:5000`
+
+### Testing
+```bash
+# Test del endpoint info
+curl http://localhost:5000/api/v1/info
+
+# Test del health check
+curl http://localhost:5000/api/v1/healthz
+
+# Verificar JSON response
+curl -H "Accept: application/json" http://localhost:5000/api/v1/info | jq
+```
+
+## 📊 Monitoreo
+
+### Métricas Disponibles
+
+La aplicación expone información útil para monitoreo:
+
+- **Hostname**: Identificación del pod/contenedor
+- **Timestamp**: Para verificar que la aplicación responde
+- **Health Status**: Estado de la aplicación
+
+### Integración con Prometheus
+
+Para monitoreo avanzado, la aplicación puede extenderse con métricas de Prometheus:
+
+```python
+from prometheus_client import Counter, Histogram, generate_latest
+
+REQUEST_COUNT = Counter('requests_total', 'Total requests', ['method', 'endpoint'])
+REQUEST_LATENCY = Histogram('request_duration_seconds', 'Request latency')
+
+@app.route('/metrics')
+def metrics():
+    return generate_latest()
+```
+
+## 🔐 Seguridad
+
+### Mejores Prácticas Implementadas
+
+1. **Non-root User**: Container ejecuta como usuario no-root
+2. **Minimal Base Image**: Usa imagen slim para reducir superficie de ataque
+3. **Health Checks**: Endpoints para verificar estado de la aplicación
+4. **Environment Variables**: Configuración via variables de entorno
+
+### Variables de Entorno
 
 ```bash
-# Validar templates
-helm template python-app-1 ./charts/python-app \
-  -f charts/python-app/values-dev.yaml
+# Puerto de la aplicación (default: 5000)
+FLASK_PORT=5000
 
-# Dry run
-helm install python-app-1-test ./charts/python-app \
-  -f charts/python-app/values-dev.yaml \
-  --dry-run --debug
+# Modo debug (solo development)
+FLASK_DEBUG=false
 
-# Deploy local
-helm install python-app-1-local ./charts/python-app \
-  -f charts/python-app/values-dev.yaml
+# Environment
+FLASK_ENV=production
+```
+
+## 🚀 CI/CD Pipeline
+
+La aplicación está integrada con GitHub Actions para:
+
+1. **Testing**: Ejecución de tests unitarios
+2. **Security Scanning**: Análisis de vulnerabilidades
+3. **Docker Build**: Construcción automática de imágenes
+4. **Deployment**: Actualización automática de manifiestos
+
+### Workflow Ejemplo
+```yaml
+name: CI/CD Pipeline
+on:
+  push:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Run tests
+      run: python -m pytest tests/
+
+  build:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+    - name: Build Docker image
+      run: docker build -t python-app-1 .
+```
+
+## 📈 Escalabilidad
+
+### Horizontal Pod Autoscaler
+
+```yaml
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: python-app-1-hpa
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: python-app-1
+  minReplicas: 2
+  maxReplicas: 10
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      target:
+        type: Utilization
+        averageUtilization: 70
 ```
 
 ## 🐛 Troubleshooting
 
 ### Problemas Comunes
 
-#### Helm Release Fails
+#### Aplicación no responde
 ```bash
-# Verificar status del release
-helm status python-app-1
-
-# Ver historia
-helm history python-app-1
-
-# Rollback si es necesario
-helm rollback python-app-1 1
-```
-
-#### ArgoCD Sync Issues
-```bash
-# Verificar estado
-argocd app get python-app-1
-
-# Forzar sync
-argocd app sync python-app-1 --force
-
-# Ver diff
-argocd app diff python-app-1
-```
-
-#### Application Not Responding
-```bash
-# Port forward para debug
-kubectl port-forward svc/python-app-1 5000:80 -n python-app-1
-
 # Verificar logs
-kubectl logs -l app=python-app-1 -n python-app-1 --tail=100
+kubectl logs -l app=python-app-1
 
-# Verificar health checks
-kubectl describe pod -l app=python-app-1 -n python-app-1
+# Verificar estado de pods
+kubectl get pods -l app=python-app-1
+
+# Port forward para debug
+kubectl port-forward deployment/python-app-1 5000:5000
 ```
 
-## 🚀 CI/CD Pipeline
-
-### GitHub Actions Integration
-
-```yaml
-name: Python App 1 Pipeline
-on:
-  push:
-    branches: [main, develop]
-
-jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Build Docker Image
-      run: docker build -t python-app-1:${{ github.sha }} .
-      
-    - name: Update Helm Values
-      run: |
-        yq eval '.image.tag = "${{ github.sha }}"' -i charts/python-app/values.yaml
-        
-    - name: Commit Changes
-      run: |
-        git add charts/python-app/values.yaml
-        git commit -m "Update image tag to ${{ github.sha }}"
-        git push
-```
-
-### Automated Testing
-
+#### Health check falla
 ```bash
-# Unit tests
-python -m pytest src/tests/
+# Test directo al pod
+kubectl exec -it deployment/python-app-1 -- curl localhost:5000/api/v1/healthz
 
-# Integration tests
-helm test python-app-1
-
-# Security scanning
-trivy image python-app-1:latest
+# Verificar configuración de probes
+kubectl describe deployment python-app-1
 ```
 
-## 📈 Métricas de Rendimiento
+## 📞 Soporte
 
-### SLIs (Service Level Indicators)
-- **Availability**: > 99.9%
-- **Response Time**: < 200ms (P95)
-- **Error Rate**: < 0.1%
-- **Throughput**: > 1000 RPS
-
-### Capacity Planning
-- **CPU**: 200m requests, 500m limits
-- **Memory**: 256Mi requests, 512Mi limits
-- **Replicas**: Min 2, Max 10 (HPA)
+**Autor:** Jaime Henao  
+**Email:** jaime.andres.henao.arbelaez@ba.com  
+**Organización:** British Airways DevOps Team  
+**GitHub:** [@Portfolio-jaime](https://github.com/Portfolio-jaime)
 
 ---
 
-**Aplicación Python Flask v1 - Portfolio DevOps** 
+**Aplicación Python Flask - DevOps Portfolio** 

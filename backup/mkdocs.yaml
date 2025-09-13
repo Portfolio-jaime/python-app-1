@@ -1,0 +1,11 @@
+site_name: 'python-app-1-1'
+site_description: 'Main documentation for the python-app-1'
+repo_url: https://github.com/Portfolio-jaime/python-app-1-1
+edit_uri: edit/main/docs
+
+plugins:
+  - techdocs-core
+
+# For sidebar navigation on https://backstage.io/, see `microsite/sidebars.json`
+nav:
+  - Home: 'index.md'
