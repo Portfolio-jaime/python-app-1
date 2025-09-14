@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, render_template
 import datetime
 import socket
 import os
@@ -14,7 +14,7 @@ def log_request_info():
 
 @app.route('/')
 def root():
-    return "¡Hola! API Python corriendo en Kubernetes 🚀"
+    return render_template('index.html')
 
 
 @app.route('/api/v1/info')
