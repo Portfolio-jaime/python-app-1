@@ -9,7 +9,8 @@ on:
 
 jobs:
   ci:
-    runs-on: ubuntu-latest
+    #runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
 
       # --- MÉTODO ANTIGUO (puedes descomentar si necesitas revertir) ---
