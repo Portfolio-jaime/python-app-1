@@ -27,7 +27,7 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: Portfolio-jaime/python-app-1:${{ env.COMMIT_ID }}
+          tags: jaimehenao8126/python-app-1:${{ env.COMMIT_ID }}
     outputs:
       commit_id: ${{ env.COMMIT_ID }}
 
