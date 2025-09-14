@@ -61,17 +61,18 @@ jobs:
           pip install yq
           yq -Yi '.image.tag = "${{needs.ci.outputs.commit_id}}"' charts/python-app-1/values.yaml
 
-      - name: Set up PAT for pushing
-        run: |
-          git remote set-url origin https://x-access-token:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/Portfolio-jaime/python-app-1.git
-
       - name: Commit changes
         uses: EndBug/add-and-commit@v9
         with:
           message: 'Updates values.yaml with commit ${{needs.ci.outputs.commit_id}}'
           author_name: jaimehenao8126
           author_email: jaimehenao8126@outlook.com
-          push: --set-upstream origin main
+          push: false
+
+      - name: Push changes with PAT
+        run: |
+          git remote set-url origin https://x-access-token:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/Portfolio-jaime/python-app-1.git
+          git push origin main
 
       - name: Install argocd
         shell: bash
