@@ -43,7 +43,7 @@ jobs:
         run: |
           echo ${{needs.ci.outputs.commit_id}}
           pip install yq
-          yq -Yi '.image.tag = "${{needs.ci.outputs.commit_id}}"' charts/python-app/values.yaml
+          yq -Yi '.image.tag = "${{needs.ci.outputs.commit_id}}"' charts/python-app-1/values.yaml
 
       - name: Commit changes
         uses: EndBug/add-and-commit@v9
@@ -65,4 +65,4 @@ jobs:
             --grpc-web \
             --username admin \
             --password  ${{ secrets.ARGOCD_PASSWORD }}
-          argocd app sync python-app
+          argocd app sync python-app-1
