@@ -69,9 +69,13 @@ jobs:
           author_email: jaimehenao8126@outlook.com
           push: false
 
-      - name: Push changes with PAT
+      - name: Pull with PAT to refresh credentials
         run: |
           git remote set-url origin https://x-access-token:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/Portfolio-jaime/python-app-1.git
+          git pull origin main
+
+      - name: Push changes with PAT
+        run: |
           git push origin main
 
       - name: Install argocd
