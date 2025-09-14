@@ -6,7 +6,9 @@ edit_uri: edit/main/docs
 plugins:
   - techdocs-core
 
-# For sidebar navigation on https://backstage.io/, see `microsite/sidebars.json`
 nav:
   - Overview:
-      - Getting started: 'docs/index.md'
+      - Introducción y API: 'docs/index.md'
+      - Arquitectura: 'docs/arquitectura.md'
+      - CI/CD y GitOps: 'docs/cicd.md'
+      - Casos de Uso y Pruebas: 'docs/uso.md'
