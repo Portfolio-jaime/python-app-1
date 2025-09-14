@@ -1,5 +1,4 @@
 name: cicd
-
 on:
   push:
     paths:
@@ -7,7 +6,6 @@ on:
       - Dockerfile
     branches:
       - main
-
 jobs:
   ci:
     runs-on: ubuntu-latest
@@ -31,22 +29,17 @@ jobs:
           tags: jaimehenao8126/python-app-1:${{ env.COMMIT_ID }}
     outputs:
       commit_id: ${{ env.COMMIT_ID }}
-
   cd:
     needs: ci
     runs-on: self-hosted
-    #runs-on: ubuntu-latest
     steps:
-
       - uses: actions/checkout@v3
-
       - name: Modify values file
         shell: bash
         run: |
           echo ${{needs.ci.outputs.commit_id}}
           pip install yq
           yq -Yi '.image.tag = "${{needs.ci.outputs.commit_id}}"' charts/python-app-1/values.yaml
-
       - name: Commit changes
         uses: EndBug/add-and-commit@v9
         with:
@@ -58,7 +51,6 @@ jobs:
           curl -sSL -o argocd https://github.com/argoproj/argo-cd/releases/latest/download/argocd-linux-amd64
           chmod +x argocd
           sudo mv ./argocd /usr/local/bin/argocd
-
       - name: Argocd app sync
         shell: bash
         run: |
