@@ -1,0 +1,94 @@
+# name: cicd
+
+# on:
+#   push:
+#     paths:
+#       - src/**
+#     branches:
+#       - main
+
+# jobs:
+#   ci:
+#     #runs-on: ubuntu-latest
+#     runs-on: self-hosted
+#     steps:
+
+#       # --- MÉTODO ANTIGUO (puedes descomentar si necesitas revertir) ---
+#       # - name: Shorten commit id
+#       #   shell: bash
+#       #   run: |
+#       #     echo "COMMIT_ID=${GITHUB_SHA::6}" >> "$GITHUB_ENV"
+#       # outputs:
+#       #   commit_id: ${{ env.COMMIT_ID }}
+#       # --- FIN MÉTODO ANTIGUO ---
+
+#       - name: Shorten commit id (nuevo output)
+#         id: commit
+#         shell: bash
+#         run: |
+#           echo "COMMIT_ID=${GITHUB_SHA::6}" >> "$GITHUB_ENV"
+#           echo "commit_id=${GITHUB_SHA::6}" >> "$GITHUB_OUTPUT"
+
+#       # --- PASOS DOCKER ACTIVOS ---
+#       - name: Login to Docker Hub
+#         uses: docker/login-action@v3
+#         with:
+#           username: ${{ secrets.DOCKERHUB_USERNAME }}
+#           password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+#       - name: Build and push
+#         uses: docker/build-push-action@v6
+#         with:
+#           push: true
+#           tags: jaimehenao8126/python-app-1:${{ steps.commit.outputs.commit_id }}
+#       # --- FIN PASOS DOCKER ---
+
+#     # --- NUEVO MÉTODO: outputs al nivel correcto del job ---
+#     outputs:
+#       commit_id: ${{ steps.commit.outputs.commit_id }}
+#     # --- FIN NUEVO MÉTODO ---
+
+#   cd:
+#     needs: ci
+#     runs-on: self-hosted
+#     steps:
+
+#       - uses: actions/checkout@v3
+
+#       - name: Modify values file
+#         shell: bash
+#         run: |
+#           echo ${{needs.ci.outputs.commit_id}}
+#           pip install yq
+#           yq -Yi '.image.tag = "${{needs.ci.outputs.commit_id}}"' charts/python-app-1/values.yaml
+
+#       - name: Commit changes
+#         uses: EndBug/add-and-commit@v9
+#         with:
+#           message: 'Updates values.yaml with commit ${{needs.ci.outputs.commit_id}}'
+#           author_name: jaimehenao8126
+#           author_email: jaimehenao8126@outlook.com
+#           push: false
+
+#       - name: Push changes with PAT (forzado)
+#         run: |
+#           git remote set-url origin https://x-access-token:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/Portfolio-jaime/python-app-1.git
+#           git config --global --unset credential.helper || true
+#           git push https://x-access-token:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/Portfolio-jaime/python-app-1.git HEAD:main
+
+#       - name: Install argocd
+#         shell: bash
+#         run: |
+#           curl -ksSL -o argocd https://argocd-server.argocd/download/argocd-linux-amd64
+#           chmod +x argocd
+#           sudo mv ./argocd /usr/local/bin/argocd
+
+#       - name: Argocd app sync
+#         shell: bash
+#         run: |
+#           argocd login argocd-server.argocd \
+#             --insecure  \
+#             --grpc-web \
+#             --username admin \
+#             --password  ${{ secrets.ARGOCD_PASSWORD }}
+#           argocd app sync python-app-1

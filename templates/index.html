@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Python App UI</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2em; }
+        h1 { color: #2d6cdf; }
+        .status { font-weight: bold; color: green; }
+    </style>
+</head>
+<body>
+    <h1>¡Bienvenido a tu API Python en Kubernetes!</h1>
+    <p>Estado: <span id="status">Cargando...</span></p>
+    <p>Versión: <span id="version">Cargando...</span></p>
+    <p>Mensaje: <span id="message">Cargando...</span></p>
+    <script>
+        fetch('/api/v1/healthz')
+            .then(resp => resp.json())
+            .then(data => document.getElementById('status').textContent = data.status);
+        fetch('/api/v1/version')
+            .then(resp => resp.json())
+            .then(data => document.getElementById('version').textContent = data.version);
+        fetch('/api/v1/info')
+            .then(resp => resp.json())
+            .then(data => document.getElementById('message').textContent = data.message);
+    </script>
+</body>
+</html>
