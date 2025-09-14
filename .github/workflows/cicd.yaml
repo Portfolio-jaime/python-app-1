@@ -71,8 +71,7 @@ jobs:
           message: 'Updates values.yaml with commit ${{needs.ci.outputs.commit_id}}'
           author_name: jaimehenao8126
           author_email: jaimehenao8126@outlook.com
-          push: true
-          github_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          push: --set-upstream origin main
 
       - name: Install argocd
         shell: bash
