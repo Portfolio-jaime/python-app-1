@@ -61,6 +61,10 @@ jobs:
           pip install yq
           yq -Yi '.image.tag = "${{needs.ci.outputs.commit_id}}"' charts/python-app-1/values.yaml
 
+      - name: Set up PAT for pushing
+        run: |
+          git remote set-url origin https://x-access-token:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/Portfolio-jaime/python-app-1.git
+
       - name: Commit changes
         uses: EndBug/add-and-commit@v9
         with:
