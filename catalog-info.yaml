@@ -6,6 +6,7 @@ metadata:
   annotations:
     github.com/project-slug: ricardoandre97/python-app-1
     backstage.io/techdocs-ref: dir:.
+    argocd/app-name: python-app-1
 spec:
   type: service
   owner: development
