@@ -7,6 +7,19 @@ metadata:
     github.com/project-slug: ricardoandre97/python-app-1
     backstage.io/techdocs-ref: dir:.
     argocd/app-name: python-app-1
+    # Kubernetes annotations for linking to cluster resources
+    backstage.io/kubernetes-id: python-app-1
+    backstage.io/kubernetes-namespace: python
+  labels:
+    environment: development
+    language: python
+    deployment-type: kubernetes
+    ci-cd: argocd
+  tags:
+    - python
+    - service
+    - kubernetes
+    - argocd
 spec:
   type: service
   owner: development
